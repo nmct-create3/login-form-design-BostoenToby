@@ -197,6 +197,10 @@ a:focus {
 
 .o-row--login {
     /* stuff here to align the card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 /* size modifiers */
@@ -625,6 +629,16 @@ a:focus {
 \*------------------------------------*/
 
 /*
+    Utilities: display
+    ---
+    Utility classes to change the display of elements
+*/
+
+.u-display-block {
+    display: block;
+}
+
+/*
     Utilities: color
     ---
     Utility classes to put specific colors onto elements
@@ -636,6 +650,10 @@ a:focus {
 
 .u-color-neutral-dark {
     color: Black;
+}
+
+.u-color-lighter-gray {
+    color: #757787;
 }
 
 /*
@@ -720,6 +738,10 @@ a:focus {
 
 .u-text-sm {
     font-size: 14px;
+}
+
+.u-text-normal {
+    font-size: 16px;
 }
 
 /*
