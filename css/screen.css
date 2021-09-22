@@ -2,6 +2,20 @@
 #FONTS
 \*------------------------------------*/
 
+@font-face {
+    font-family: "Inter-Web";
+    font-weight: 400;
+    src: url("../fonts/Inter-Regular.woff2") format("woff2");
+    font-display: auto;
+}
+
+@font-face {
+    font-family: "Inter-Web";
+    font-weight: 600;
+    src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
+    font-display: auto;
+}
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
@@ -25,12 +39,12 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    font-family: "Inter-Web", Helvetica, arial, sans-serif;
+    color: #20223a;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: #F5F6FA;
 }
 
 *,
@@ -46,14 +60,8 @@ html {
 * Customize the background color to match your design.
 */
 
-::-moz-selection {
-    background: HotPink;
-    color: white;
-    text-shadow: none;
-}
-
 ::selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
@@ -158,18 +166,18 @@ hr {
 }
 
 a {
-    color: HotPink;
+    color: #3385FF;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: #3385FF;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: #2E77E6;
 }
 
 /*------------------------------------*\
@@ -420,6 +428,9 @@ a:focus {
 
     /* Corrects inability to style clickable `input` types in iOS */
     -webkit-appearance: none;
+
+    /*Zorgt dat de outline afstaat als er op het element gedrukt wordt omdat we deze niet kunnen designen zoals we willen*/
+    outline: none;
 }
 
 /*------------------------------------*\
@@ -432,11 +443,66 @@ a:focus {
     Website main logo
 */
 
+.c-logo {
+    display: flex;
+    height: 24px;
+    justify-content: center;
+}
+
+.c-logo__symbol {
+    height: 100%;
+    display: block;
+}
+
+.c-logo__path--1 {
+    fill: #20223A;
+}
+
+.c-logo__path--1 {
+    fill: #3385FF;
+}
+
+.c-logo__path--1 {
+    fill: #1B4186;
+}
+
 /*
     Component: Card
     ---
     Card with box shadow
 */
+
+.c-card {
+    background-color: white;
+    border: 1px solid #0000000d;
+    box-shadow: 0 2px 4px #00000012;
+    /* display: flow-root; */
+}
+
+/* .c-card__header,
+.c-card__body {
+    padding: 48px;
+} */
+
+.c-card__header {
+    padding: 48px 48px 24px 48px;
+}
+
+.c-card__body {
+    padding: 24px 48px 48px 48px;
+}
+
+.c-card__title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21px;
+}
+
+.c-card__footer {
+    padding: 24px;
+    border-top: 1px solid #0000000d;
+}
 
 /*
     Component: Forms
@@ -451,10 +517,40 @@ a:focus {
 */
 
 .c-input {
+    display: block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /*De breedte van de box pakt de maximum breedte van de container in*/
+    width: 100%;
 
+    /*Border styles*/
+    border-width: 1px;
+    border-style: solid;
+    border-color: #E2E3E7;
+    /*Border style short*/
+    border: 1px solid #E2E3E7;
+
+    padding: 11px;
+
+    /*Zorgt voor afrondingen van de box*/
+    border-radius: 3px;
+
+    /*Standaard gaan font en kleur niet mee van de html tag naar input velden */
+    font-family: inherit;
+    color: inherit;
+
+    /*font-size en height veranderen*/
+    font-size: 16px;
+    line-height: 24px;
+
+    /*Zorgt dat als er op geklikt wordt dat de outline af staat omdat we deze niet kunnen designen*/
+    outline: none;
 }
 
 .c-input:focus {
+    border-color: #3385FF;
+    box-shadow: 0 0 0 3px #4f95ff4d;
 }
 
 /*
@@ -464,13 +560,27 @@ a:focus {
 */
 
 .c-label {
+    display: block;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color: #606274;
+}
 
+.c-label--option {
+    margin-bottom: 0px;
+    margin-left: 8px;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
 
 .c-form-field:focus-within .c-label {
 
+}
+
+.c-form-field--option {
+    display: flex;
+    align-items: center;
 }
 
 /*
@@ -480,19 +590,30 @@ a:focus {
 */
 
 .c-button {
-
+    color: white;
+    background-color: #3385FF;
+    font-size: inherit;
+    font-weight: 600;
+    width: 100%;
+    padding: 14px ;
+    border: 1px solid #2E77E6;
+    border-radius: 3px;
+    line-height: 20px;
 }
 
 .c-button:hover {
-
+    background-color: #4F95FF;
 }
 
 .c-button:focus {
+    outline: none;
+    background-color: #3385FF;
+    border: 3px solid #2d77e67d;
 
 }
 
 .c-button:active {
-
+    background-color: #2E77E6;
 }
 
 .c-button--block {
